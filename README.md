@@ -38,18 +38,15 @@ ad.registerScene(sceneOne, 1500);
 **5. That's it!**
 
 ##Options
-###`Ad(opts)`:
-**`fallbackHide`**  
-*default: `[]`*  
+###`Ad()`:
+**`fallbackHide`** (optional) *default: `[]`*  
 This is an array of id strings listing all elements in your ad that you want to be **hidden** if the browser does not support this library.  
 
-**`fallbackShow`**  
-*default: `[]`*  
+**`fallbackShow`** (optional) *default: `[]`*  
 This is an array of id strings listing all elements in your ad that you want to be **shown** if the browser does not support this library.  
 
-**`loops`**  
-*default: `1`*  
-This is the number of times the ad should loop.  Anything less than 0 will loop infinitely.
+**`loops`** (optional) *default: `1`*  
+This is the number of times the ad should loop.  Anything less than 1 will loop infinitely.
 
 *example*:  
 ```html
@@ -57,7 +54,11 @@ This is the number of times the ad should loop.  Anything less than 0 will loop 
 <div id="big-moving-logo"></div>
 ```
 ```javascript
-var ad = new Ad({fallbackHide: ['big-moving-logo']});
+var ad = new Ad({
+	fallbackHide: ['big-moving-logo'],
+	fallbackShow: ['fallback-logo'],
+	loops: 2
+});
 ```
 
 
