@@ -38,11 +38,9 @@ ad.registerScene(sceneOne, 1500);
 **5. That's it!**
 
 ##Options
-`Ad(opts)`:
-
-**`fallbackHide`**
-*default: `[]`*
-
+###`Ad(opts)`:
+**`fallbackHide`**  
+*default: `[]`*  
 This is an array of id strings listing all elements in your ad that you want to be hidden if the browser does not support this library.  
 
 
