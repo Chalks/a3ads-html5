@@ -42,6 +42,14 @@ ad.registerScene(sceneOne, 1500);
 **`fallbackHide`**  
 *default: `[]`*  
 This is an array of id strings listing all elements in your ad that you want to be hidden if the browser does not support this library.  
+*example*:  
+```html
+<div id="fallback-logo"></div>
+<div id="big-moving-logo"></div>
+```
+```javascript
+var ad = new Ad({fallbackHide: ['big-moving-logo']});
+```
 
 
 
