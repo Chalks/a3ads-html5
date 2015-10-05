@@ -1,0 +1,121 @@
+/* display reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+
+#ad {
+	position: relative;
+	width: 298px;
+	height: 248px;
+	border: 1px solid black;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#clicker {
+	width: 300px;
+	height: 250px;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#ad .asset {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#static {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+
+#content {
+	display: inline-block;
+	background-color: #FF6B00;
+	width: 500px;
+	height: 500px;
+	left: -100px;
+	top: 70px;
+	position: relative;
+	transform: rotate(-16deg);
+	-ms-transform: rotate(-16deg);
+	-webkit-transform: rotate(-16deg);
+}
+
+#logo.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(-10px, 1px);
+	-ms-transform: translate(-10px, 1px);
+	-webkit-transform: translate(-10px, 1px);
+}
+
+#tag.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(57px, 33px) rotate(-16deg);
+	-ms-transform: translate(57px, 33px) rotate(-16deg);
+	-webkit-transform: translate(57px, 33px) rotate(-16deg);
+}
+
+#loremipsumdolor.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(20px, 70px) rotate(-16deg);
+	-ms-transform: translate(20px, 70px) rotate(-16deg);
+	-webkit-transform: translate(20px, 70px) rotate(-16deg);
+}
+
+#sitamet.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(34px, 97px) rotate(-16deg);
+	-ms-transform: translate(34px, 97px) rotate(-16deg);
+	-webkit-transform: translate(34px, 97px) rotate(-16deg);
+}
+
+#consecteturadipiscing.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(47px, 150px) rotate(-16deg);
+	-ms-transform: translate(47px, 150px) rotate(-16deg);
+	-webkit-transform: translate(47px, 150px) rotate(-16deg);
+}
+
+#elit.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(59px, 173px) rotate(-16deg);
+	-ms-transform: translate(59px, 173px) rotate(-16deg);
+	-webkit-transform: translate(59px, 173px) rotate(-16deg);
+}
+
+#html5faster.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(-62px, 102px) rotate(-16deg);
+	-ms-transform: translate(-62px, 102px) rotate(-16deg);
+	-webkit-transform: translate(-62px, 104px) rotate(-16deg);
+}
+
+#github.asset {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(132px, 190px) rotate(-16deg);
+	-ms-transform: translate(132px, 190px) rotate(-16deg);
+	-webkit-transform: translate(132px, 190px) rotate(-16deg);
+}
+
+#github-hover.asset {
+	visibility: hidden;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(132px, 190px) rotate(-16deg);
+	-ms-transform: translate(132px, 190px) rotate(-16deg);
+	-webkit-transform: translate(132px, 190px) rotate(-16deg);
+}
+
+
