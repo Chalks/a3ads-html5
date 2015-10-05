@@ -113,9 +113,17 @@ Any number in degrees.
 Any number.
 
 \* **Note**, while fromTop/Left and toTop/Left are required, you can get `moveIn` to calculate their corresponding pair by providing `angle` and `distance`.  Therefore, the following minimum required options:  
-`adInstance.moveIn('id', {duration:500, delay:0, fromLeft:0, fromTop:0, toLeft:8.51, toTop:8.51});`  
-OR `adInstance.moveIn('id', {duration:500, delay:0, fromLeft:0, fromTop:0, angle:45, distance:10});`  
-OR `adInstance.moveIn('id', {duration:500, delay:0, toLeft:8.51, toTop:8.51, angle:45, distance:10})`  
+```javascript
+adInstance.moveIn('id', {duration:500, delay:0, fromLeft:0, fromTop:0, toLeft:8.51, toTop:8.51});
+```
+OR
+```javascript
+adInstance.moveIn('id', {duration:500, delay:0, fromLeft:0, fromTop:0, angle:45, distance:10});
+```
+OR
+```javascript
+adInstance.moveIn('id', {duration:500, delay:0, toLeft:8.51, toTop:8.51, angle:45, distance:10})
+```
 are all roughly identical.
 
 (optional) **`fromScale`** *default: `1`*  
