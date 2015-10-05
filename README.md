@@ -1,7 +1,7 @@
 # Introducing a3ads-html5
 There is a dearth of information about what HTML5 ads are, and how they can be created.  This is a small library used for creating simple HTML5 ads suitable for publication on DoubleClick networks and is the lowest weight solution I've found.  It depends on the [Tween library](https://github.com/tweenjs/tween.js/) maintained by [sole](https://github.com/sole).
 
-#Usage
+##Usage
 
 **1. Include the javascript**
 ```html
@@ -34,5 +34,16 @@ function sceneOne() {
 ad.registerScene(sceneOne, 1500);
 //...
 ```
+
+**5. That's it!**
+
+##Options
+`Ad(opts)`:
+
+**`fallbackHide`**
+*default: `[]`*
+
+This is an array of id strings listing all elements in your ad that you want to be hidden if the browser does not support this library.  
+
 
 
