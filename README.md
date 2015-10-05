@@ -1,8 +1,7 @@
 # Introducing a3ads-html5
 There is a dearth of information about what HTML5 ads are, and how they can be created.  This is a small library used for creating simple HTML5 ads suitable for publication on DoubleClick networks and is the lowest weight solution I've found.  It depends on the [Tween library](https://github.com/tweenjs/tween.js/) maintained by [sole](https://github.com/sole).
 
-##Usage
-
+##Setup
 **1. Include the javascript**
 ```html
 <script src="js/Tween.js"></script>
@@ -37,15 +36,17 @@ ad.registerScene(sceneOne, 1500);
 
 **5. That's it!**
 
-##Options
-###`Ad()`:
-**`fallbackHide`** (optional) *default: `[]`*  
+##Usage
+###`Ad(Object)`:
+**required**, used to initialize the ad.
+
+(optional) **`fallbackHide`** *default: `[]`*  
 This is an array of id strings listing all elements in your ad that you want to be **hidden** if the browser does not support this library.  
 
-**`fallbackShow`** (optional) *default: `[]`*  
+(optional) **`fallbackShow`** *default: `[]`*  
 This is an array of id strings listing all elements in your ad that you want to be **shown** if the browser does not support this library.  
 
-**`loops`** (optional) *default: `1`*  
+(optional) **`loops`** *default: `1`*  
 This is the number of times the ad should loop.  Anything less than 1 will loop infinitely.
 
 *example*:  
@@ -54,12 +55,18 @@ This is the number of times the ad should loop.  Anything less than 1 will loop 
 <div id="big-moving-logo"></div>
 ```
 ```javascript
-var ad = new Ad({
+var adInstance = new Ad({
 	fallbackHide: ['big-moving-logo'],
 	fallbackShow: ['fallback-logo'],
 	loops: 2
 });
 ```
 
+###`adInstance.onLoad(callback)
+**required**, you must call this function as it performs compatibility checks.  You must provide a callback function.  If you want the ad to play on page load, the following is recommended:
 
-
+```javascript
+adInstance.onLoad(function() {
+	adInstance.play();
+});
+```
