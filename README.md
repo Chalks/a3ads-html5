@@ -41,7 +41,16 @@ ad.registerScene(sceneOne, 1500);
 ###`Ad(opts)`:
 **`fallbackHide`**  
 *default: `[]`*  
-This is an array of id strings listing all elements in your ad that you want to be hidden if the browser does not support this library.  
+This is an array of id strings listing all elements in your ad that you want to be **hidden** if the browser does not support this library.  
+
+**`fallbackShow`**  
+*default: `[]`*  
+This is an array of id strings listing all elements in your ad that you want to be **shown** if the browser does not support this library.  
+
+**`loops`**  
+*default: `1`*  
+This is the number of times the ad should loop.  Anything less than 0 will loop infinitely.
+
 *example*:  
 ```html
 <div id="fallback-logo"></div>
