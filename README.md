@@ -5,34 +5,34 @@ There is a dearth of information about what HTML5 ads are, and how they can be c
 
 **1. Include the javascript**
 ```html
-	<script src="js/Tween.js"></script>
-	<script src="js/a3ads.js"></script>
+<script src="js/Tween.js"></script>
+<script src="js/a3ads.js"></script>
 ```
 
 **2. Create the ad and decide when it will play**
 ```javascript
-	var ad = new Ad({
-		fallbackHide: [], //explained below
-		fallbackShow: []
-	});
-	ad.onLoad(function() {
-		ad.play();
-	});
+var ad = new Ad({
+	fallbackHide: [], //explained below
+	fallbackShow: []
+});
+ad.onLoad(function() {
+	ad.play();
+});
 ```
 
 **3. Create your scene(s)**
 ```javascript
-	function sceneOne() {
-		Ad.fadeIn('logo', {duration:1000, delay:0});
-		Ad.moveIn('logo', {duration:1000, delay:0, easing:TWEEN.Easing.Quadratic.Out, toLeft:-4, toTop:-25, angle:107, distance:150, append:"rotate(-17deg)"});
-		//...
-	}
+function sceneOne() {
+	Ad.fadeIn('logo', {duration:1000, delay:0});
+	Ad.moveIn('logo', {duration:1000, delay:0, easing:TWEEN.Easing.Quadratic.Out, toLeft:-4, toTop:-25, angle:107, distance:150, append:"rotate(-17deg)"});
+	//...
+}
 ```
 
 **4. Register your scene(s)**
 ```javascript
-	ad.registerScene(sceneOne, 1500);
-	//...
+ad.registerScene(sceneOne, 1500);
+//...
 ```
 
 
