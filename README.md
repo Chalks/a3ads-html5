@@ -139,8 +139,7 @@ Any easing function provided by the TWEEN library.
 What string to append to the CSS3 Transform.  I found it useful to append `rotate(17deg)` in one of my ads that didn't rotate during movement, but did need to stay rotated while moving.
 
 ####`adInstance.fadeIn(domId, options)`:
-*options*:
-
+*options*:  
 (required) **`duration`** *default: `n/a`*  
 How long the movement will last in milliseconds.
 
@@ -151,8 +150,7 @@ How long before the movement beings in milliseconds.
 Any easing function provided by the TWEEN library.
 
 ####`adInstance.fadeOut(domId, options)`:
-*options*:
-
+*options*:  
 (required) **`duration`** *default: `n/a`*  
 How long the movement will last in milliseconds.
 
