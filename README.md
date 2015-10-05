@@ -36,7 +36,7 @@ ad.registerScene(sceneOne, 1500);
 
 **5. That's it!**
 
-##Usage
+##Usage (setting everything up)
 ###`Ad(Object)`:
 **required**, used to initialize the ad.
 
@@ -62,11 +62,82 @@ var adInstance = new Ad({
 });
 ```
 
-###`adInstance.onLoad(callback)
-**required**, you must call this function as it performs compatibility checks.  You must provide a callback function.  If you want the ad to play on page load, the following is recommended:
+###`adInstance.onLoad(callback)`:
+**required**, you must call this function as it performs compatibility checks.  You must provide a callback function.  If you want the ad to play on page load, the following is recommended.
 
+*example*:  
 ```javascript
 adInstance.onLoad(function() {
 	adInstance.play();
 });
 ```
+
+###`adInstance.registerScene(scene, duration)`:
+**required**, if you don't register at least one scene, nothing happens.  Why would you do that?  Scenes can be any function.  Duration can be any number that setTimeout accepts.
+
+*example*:  
+```javascript
+adInstance.registerScene(function() { /* do stuff */ }, 1500);
+```
+
+##Usage (moving things around)
+###`adInstance.hide(domId)`:
+Just hides stuff with CSS instantly.  Nothing complicated, but could be extended to hide in fancier ways.
+
+###`adInstance.moveIn(domId, options)`:
+This is the meat of the library.  It allows you to move objects around pretty dynamically using CSS3 Transform.
+
+*options*:  
+(required) **`duration`** *default: `n/a`*  
+How long the movement will last in milliseconds.
+
+(required) **`delay`** *default: `n/a`*  
+How long before the movement beings in milliseconds.
+
+(required\*) **`fromLeft`** *default: `n/a`*  
+Any number.  'px' will be appended.  The position this element should start at relative to the left side of the ad.
+
+(required\*) **`fromTop`** *default: `n/a`*  
+Any number.  'px' will be appended.  The position this element should start at relative to the top side of the ad.
+
+(required\*) **`toLeft`** *default: `n/a`*  
+Any number.  'px' will be appended.  The position this element should end at relative to the left side of the ad.
+
+(required\*) **`toTop`** *default: `n/a`*  
+Any number.  'px' will be appended.  The position this element should end at relative to the top side of the ad.
+
+(optional\*) **`angle`** *default: `n/a`*  
+Any number in degrees.
+
+(optional\*) **`distance`** *default: `n/a`*  
+Any number.
+
+\* **Note**, while fromTop/Left and toTop/Left are required, you can get `moveIn` to calculate their corresponding pair by providing `angle` and `distance`.  Therefore, the following minimum required options:  
+`adInstance.moveIn('id', {duration:500, delay:0, fromLeft:0, fromTop:0, toLeft:8.51, toTop:8.51});`  
+OR `adInstance.moveIn('id', {duration:500, delay:0, fromLeft:0, fromTop:0, angle:45, distance:10});`  
+OR `adInstance.moveIn('id', {duration:500, delay:0, toLeft:8.51, toTop:8.51, angle:45, distance:10})`  
+are all roughly identical.
+
+(optional) **`fromScale`** *default: `1`*  
+Scale to start at (both X and Y scale), 1 is 100%.
+
+(optional) **`toScale`** *default: `1`*  
+Scale to end at (both X and Y scale), 1 is 100%.
+
+(optional) **`easing`** *default: `TWEEN.Easing.Quadratic.Out`*  
+Any easing function provided by the TWEEN library.
+
+(optional) **`append`** *default: ``*  
+What string to append to the CSS3 Transform.  I found it useful to append `rotate(17deg)` in one of my ads that didn't rotate during movement, but did need to stay rotated while moving.
+
+
+###`adInstance.fadeIn(domId, options)`:
+
+###`adInstance.fadeOut(domId, options)`:
+
+
+
+
+
+
+
