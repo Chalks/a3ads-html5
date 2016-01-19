@@ -1,10 +1,12 @@
 var ad = new Ad({
 	fallbackHide: ['content', 'logo', 'tag', 'loremipsumdolor', 'sitamet', 'consecteturadipiscing', 'elit', 'html5faster', 'github', 'github-hover'],
-	fallbackShow: ['static']
+	fallbackShow: ['static'],
+	loops: -1
 });
 ad.registerScene(sceneOne, 3500);
 ad.registerScene(sceneTwo, 1600);
 ad.registerScene(sceneThree, 2500);
+ad.registerScene(sceneFour, 2000);
 ad.onLoad(function() {
 	hoverStates();
 	ad.play();
@@ -56,5 +58,12 @@ function sceneThree() {
 	ad.moveIn('html5faster', {duration:700, delay:0, easing:TWEEN.Easing.Quintic.In, fromLeft:-22, toLeft:-26, fromTop:50, toTop:104, fromScale:2, toScale:1, append:"rotate(-16deg)"});
 	ad.fadeIn('github-hover', {duration:1000, delay:0});
 	ad.fadeIn('github', {duration:1000, delay:0});
+}
+
+function sceneFour() {
+	ad.fadeOut('html5faster', {duration:300, delay:1200});
+	ad.fadeOut('html5faster', {duration:300, delay:1200});
+	ad.fadeOut('github-hover', {duration:300, delay:1200});
+	ad.fadeOut('github', {duration:300, delay:1200});
 }
 
