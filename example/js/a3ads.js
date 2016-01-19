@@ -8,7 +8,7 @@
 // recommended polyfill for bind if not present
 (function() {if (!Function.prototype.bind) { Function.prototype.bind = function(oThis) { if (typeof this !== 'function') { throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable'); } var aArgs   = Array.prototype.slice.call(arguments, 1), fToBind = this, fNOP    = function() {}, fBound  = function() { return fToBind.apply(this instanceof fNOP ? this : oThis, aArgs.concat(Array.prototype.slice.call(arguments))); }; if (this.prototype) { fNOP.prototype = this.prototype; } fBound.prototype = new fNOP(); return fBound; }; } }());
 
-function Ad(opts) {
+function A3Ads(opts) {
 	opts = opts != undefined ? opts : {};
 	this.fallbackHide = opts.fallbackHide != undefined ? opts.fallbackHide : [];
 	this.fallbackShow = opts.fallbackShow != undefined ? opts.fallbackShow : [];
@@ -19,12 +19,12 @@ function Ad(opts) {
 	this.played = false;
 }
 
-Ad.prototype.animate = function() {
+A3Ads.prototype.animate = function() {
 	requestAnimationFrame(this.animate.bind(this));
 	TWEEN.update();
 }
 
-Ad.prototype.onLoad = function(callback) {
+A3Ads.prototype.onLoad = function(callback) {
 	var self = this;
 	document.addEventListener('DOMContentLoaded', function() {
 		self.played = !self.isCompatible()
@@ -32,7 +32,7 @@ Ad.prototype.onLoad = function(callback) {
 	}, false);
 }
 
-Ad.prototype.isCompatible = function() {
+A3Ads.prototype.isCompatible = function() {
 	var opacity = false;
 	if('opacity' in document.documentElement.style || 'filter' in document.documentElement.style) {
 		opacity = true;
@@ -56,11 +56,11 @@ Ad.prototype.isCompatible = function() {
 	return compatible;
 }
 
-Ad.prototype.registerScene = function(scene, duration) {
+A3Ads.prototype.registerScene = function(scene, duration) {
 	this.scenes.push({'scene':scene, 'duration':duration});
 }
 
-Ad.prototype.play = function() {
+A3Ads.prototype.play = function() {
 	if(!this.played) {
 		this.played = true;
 		this.animate();
@@ -70,7 +70,7 @@ Ad.prototype.play = function() {
 	}
 }
 
-Ad.prototype.nextScene = function() {
+A3Ads.prototype.nextScene = function() {
 	var self = this;
 	self.scenes[this.currentScene].scene();
 	setTimeout(function() {
@@ -87,7 +87,7 @@ Ad.prototype.nextScene = function() {
 	}, self.scenes[self.currentScene].duration);
 }
 
-Ad.prototype.hide = function(domId) {
+A3Ads.prototype.hide = function(domId) {
 	var el = document.getElementById(domId);
 	el.style.display = "none";
 };
@@ -104,7 +104,7 @@ Ad.prototype.hide = function(domId) {
 *   append, default ''
 *   easing, default TWEEN.Easing.Quadratic.Out
 */
-Ad.prototype.moveIn = function(domId, opts) {
+A3Ads.prototype.moveIn = function(domId, opts) {
 	if(opts.angle != undefined && opts.distance != undefined) {
 		if(opts.fromLeft == undefined && opts.fromTop == undefined) {
 			opts.fromLeft = opts.toLeft + opts.distance * Math.cos(opts.angle * Math.PI / 180);
@@ -133,7 +133,7 @@ Ad.prototype.moveIn = function(domId, opts) {
 	return tween;
 };
 
-Ad.prototype.fadeIn = function(domId, opts) {
+A3Ads.prototype.fadeIn = function(domId, opts) {
 	opts.easing = opts.easing != undefined ? opts.easing : TWEEN.Easing.Linear.None;
 	var el = document.getElementById(domId);
 	var tween = new TWEEN.Tween( { opa: 0 })
@@ -148,7 +148,7 @@ Ad.prototype.fadeIn = function(domId, opts) {
 	return tween;
 }
 
-Ad.prototype.fadeOut = function(domId, opts) {
+A3Ads.prototype.fadeOut = function(domId, opts) {
 	opts.easing = opts.easing != undefined ? opts.easing : TWEEN.Easing.Linear.None;
 	var el = document.getElementById(domId);
 	var tween = new TWEEN.Tween( { opa:1 })

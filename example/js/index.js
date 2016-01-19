@@ -1,4 +1,4 @@
-var ad = new Ad({
+var ad = new A3Ads({
 	fallbackHide: ['content', 'logo', 'tag', 'loremipsumdolor', 'sitamet', 'consecteturadipiscing', 'elit', 'html5faster', 'github', 'github-hover'],
 	fallbackShow: ['static'],
 	loops: -1
