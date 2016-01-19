@@ -10,7 +10,7 @@ There is a dearth of information about what HTML5 ads are, and how they can be c
 
 **2. Create the ad and decide when it will play**
 ```javascript
-var ad = new Ad({
+var ad = new A3Ads({
 	fallbackHide: [], //explained below
 	fallbackShow: []
 });
@@ -22,8 +22,8 @@ ad.onLoad(function() {
 **3. Create your scene(s)**
 ```javascript
 function sceneOne() {
-	Ad.fadeIn('logo', {duration:1000, delay:0});
-	Ad.moveIn('logo', {duration:1000, delay:0, easing:TWEEN.Easing.Quadratic.Out, toLeft:-4, toTop:-25, angle:107, distance:150, append:"rotate(-17deg)"});
+	A3Ads.fadeIn('logo', {duration:1000, delay:0});
+	A3Ads.moveIn('logo', {duration:1000, delay:0, easing:TWEEN.Easing.Quadratic.Out, toLeft:-4, toTop:-25, angle:107, distance:150, append:"rotate(-17deg)"});
 	//...
 }
 ```
@@ -37,7 +37,7 @@ ad.registerScene(sceneOne, 1500);
 **5. That's it!**
 
 ##Usage (setting everything up)
-####`Ad(Object)`:
+####`A3Ads(Object)`:
 **required**, used to initialize the ad.
 
 (optional) **`fallbackHide`** *default: `[]`*  
@@ -55,7 +55,7 @@ This is the number of times the ad should loop.  Anything less than 1 will loop 
 <div id="big-moving-logo"></div>
 ```
 ```javascript
-var adInstance = new Ad({
+var adInstance = new A3Ads({
 	fallbackHide: ['big-moving-logo'],
 	fallbackShow: ['fallback-logo'],
 	loops: 2
